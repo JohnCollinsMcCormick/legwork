@@ -1,0 +1,157 @@
+/* --- Base --- */
+:root{
+  --bg: #0b0b0b;
+  --fg: #f4f4f4;
+  --muted: rgba(244,244,244,.75);
+  --hairline: rgba(244,244,244,.18);
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+.nav{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 18px 0 6px;
+}
+.nav a{
+  display: inline-block;
+  padding: 8px 10px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.nav a:hover{
+  border-color: var(--fg);
+}
+.nav .active{
+  border-color: var(--fg);
+}
+.small{
+  font-size: 14px;
+  color: var(--muted);
+}
+.refs{
+  list-style: none;
+  margin-left: 0;
+}
+.refs li{
+  margin: 10px 0;
+}
+.post{
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.post:last-child{ border-bottom: none; }
+.post h3{
+  margin: 0 0 6px 0;
+  font-size: 20px;
+}
+.post .meta{
+  margin: 0 0 10px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+/* --- Watermark background (Option C) --- */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background-image: url("legwork.png");
+  background-repeat: repeat;
+  background-position: center 10%;
+  background-size: min(600px, 92vw);
+  opacity: 0.14;       /* adjust to taste */
+  filter: saturate(0) contrast(1.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page{
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 22px 64px;
+}
+
+.header{
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 26px;
+}
+
+.brand h1{
+  margin: 0 0 8px 0;
+  letter-spacing: 0.08em;
+  font-size: clamp(44px, 6vw, 74px);
+  line-height: 1.05;
+}
+
+.tagline{
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 48ch;
+}
+
+.quick{
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.content section{
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.content section:last-child{
+  border-bottom: none;
+}
+
+h2{
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+p{ margin: 0 0 12px 0; }
+ul{
+  margin: 0 0 12px 18px;
+  padding: 0;
+}
+li{ margin: 6px 0; }
+
+.note{
+  color: var(--muted);
+  border-left: 3px solid var(--hairline);
+  padding-left: 12px;
+}
+
+a{
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+}
+a:hover{
+  border-bottom-color: var(--fg);
+}
+
+.muted{ color: var(--muted); margin-left: 6px; }
+
+.footer{
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
+  color: var(--muted);
+}
+.brand{
+  text-align: center;
+}
